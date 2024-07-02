@@ -21,11 +21,49 @@
             border-radius: 5px;
         }
     </style>
+    <script>
+        function setLanguageContent() {
+            const userLang = navigator.language || navigator.userLanguage;
+            const langCode = userLang.substring(0, 2);
+            const elements = document.querySelectorAll('[data-lang]');
+
+            elements.forEach(element => {
+                const langContent = element.getAttribute('data-lang-' + langCode);
+                if (langContent) {
+                    element.innerHTML = langContent;
+                } else {
+                    element.innerHTML = element.getAttribute('data-lang-en'); // デフォルトは英語
+                }
+            });
+        }
+    </script>
 </head>
-<body>
-    <h1>アプリのダウンロード</h1>
-    <p>以下のリンクからアプリをダウンロードしてください。</p>
-    <a href="https://itunes.apple.com/ja/app/id6504466604?mt=8" class="button">iOS版ダウンロード</a>
-    <a href="https://play.google.com/store/apps/details?id=jp.co.netast.tokyotoiletjourney" class="button">Android版ダウンロード</a>
+<body onload="setLanguageContent()">
+    <h1 data-lang 
+        data-lang-en="Download the App" 
+        data-lang-ja="アプリのダウンロード" 
+        data-lang-ko="앱 다운로드" 
+        data-lang-zh="下載應用程式">
+    </h1>
+    <p data-lang 
+       data-lang-en="Please download the app from the links below." 
+       data-lang-ja="以下のリンクからアプリをダウンロードしてください。" 
+       data-lang-ko="아래 링크에서 앱을 다운로드하세요." 
+       data-lang-zh="請從下面的鏈接下載應用程式。">
+    </p>
+    <a href="https://itunes.apple.com/ja/app/id6504466604?mt=8" class="button" 
+       data-lang 
+       data-lang-en="Download for iOS" 
+       data-lang-ja="iOS版ダウンロード" 
+       data-lang-ko="iOS용 다운로드" 
+       data-lang-zh="下載iOS版本">
+    </a>
+    <a href="https://play.google.com/store/apps/details?id=jp.co.netast.tokyotoiletjourney" class="button" 
+       data-lang 
+       data-lang-en="Download for Android" 
+       data-lang-ja="Android版ダウンロード" 
+       data-lang-ko="Android용 다운로드" 
+       data-lang-zh="下載Android版本">
+    </a>
 </body>
 </html>
