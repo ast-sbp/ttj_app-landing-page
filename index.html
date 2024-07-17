@@ -5,21 +5,43 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>アプリダウンロードページ</title>
     <style>
-        body {
-            font-family: Arial, sans-serif;
+        .container {
+            position: relative;
+            display: inline-block;
             text-align: center;
-            margin-top: 50px;
+            background-color: #0088AA;
+            font-family: Arial, sans-serif;
+            color: white;
+            padding-bottom: 50px;
         }
+
+        .flyer-image {
+            display: block;
+            width: 100%;
+            height: auto;
+        }
+
         .button {
             display: inline-block;
-            padding: 10px 20px;
-            margin: 10px;
+            padding: 5px 10px;
+            margin: 0px 10px 10px 10px;
             font-size: 20px;
+            width: 230px;
             text-decoration: none;
             color: white;
-            background-color: #007BFF;
+            background-color: #000000;
             border-radius: 5px;
         }
+
+        h3 { 
+            margin: 0px;
+        }
+
+        p {
+            font-size: 12px;
+            margin: 10px;
+        }
+        
     </style>
     <script>
         function setLanguageContent() {
@@ -39,31 +61,34 @@
     </script>
 </head>
 <body onload="setLanguageContent()">
-    <h1 data-lang 
-        data-lang-en="Download the App" 
-        data-lang-ja="アプリのダウンロード" 
-        data-lang-ko="앱 다운로드" 
-        data-lang-zh="下載應用程式">
-    </h1>
-    <p data-lang 
-       data-lang-en="Please download the app from the links below." 
-       data-lang-ja="以下のリンクからアプリをダウンロードしてください。" 
-       data-lang-ko="아래 링크에서 앱을 다운로드하세요." 
-       data-lang-zh="請從下面的鏈接下載應用程式。">
-    </p>
-    <a href="https://itunes.apple.com/ja/app/id6504466604?mt=8" class="button" 
-       data-lang 
-       data-lang-en="Download for iOS" 
-       data-lang-ja="iOS版ダウンロード" 
-       data-lang-ko="iOS용 다운로드" 
-       data-lang-zh="下載iOS版本">
-    </a>
-    <a href="https://play.google.com/store/apps/details?id=jp.co.netast.tokyotoiletjourney" class="button" 
-       data-lang 
-       data-lang-en="Download for Android" 
-       data-lang-ja="Android版ダウンロード" 
-       data-lang-ko="Android용 다운로드" 
-       data-lang-zh="下載Android版本">
-    </a>
+    <div class="container">
+        <img src="会社名刺QRコードのリンク先.jpg" alt="チラシ画像" class="flyer-image">
+        <h3 data-lang 
+            data-lang-en="Download the App" 
+            data-lang-ja="アプリのダウンロード" 
+            data-lang-ko="앱 다운로드" 
+            data-lang-zh="下載應用程式">
+        </h3>
+        <p data-lang 
+           data-lang-en="Please download the app from the links below." 
+           data-lang-ja="以下のリンクからアプリをダウンロードしてください。" 
+           data-lang-ko="아래 링크에서 앱을 다운로드하세요." 
+           data-lang-zh="請從下面的鏈接下載應用程式。">
+        </p>
+        <a href="https://itunes.apple.com/ja/app/id6504466604?mt=8" class="button" 
+           data-lang 
+           data-lang-en="Download for iOS" 
+           data-lang-ja="iOS版ダウンロード" 
+           data-lang-ko="iOS용 다운로드" 
+           data-lang-zh="下載iOS版本">
+        </a>
+        <a href="https://play.google.com/store/apps/details?id=jp.co.netast.tokyotoiletjourney" class="button" 
+           data-lang 
+           data-lang-en="Download for Android" 
+           data-lang-ja="Android版ダウンロード" 
+           data-lang-ko="Android용 다운로드" 
+           data-lang-zh="下載Android版本">
+        </a>
+    </div>
 </body>
 </html>
